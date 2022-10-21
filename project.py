@@ -8,14 +8,24 @@ def menuRun():
     3: 'Descibe Yourself',
     4: 'Exit',
 }
+
+    print("\n \nWelcome to the menu")
     for i in menu.keys():
         print (i, '--', menu[i] )
 
     selection = 0
+    while True:
+            try:
+                selection = int(input('Enter your choice: '))
+
+            except ValueError:
+                print("This is an unaccepted response, enter a valid value")
+                continue
+            else:
+                break
+
     
-    selection = int(input('Enter your choice: '))
     
-    print('Enter only a letter!')
         
 
     if selection == 1:
@@ -28,7 +38,7 @@ def menuRun():
            Exit()
 
 def HorseRacing():
-    print("Betting Odds: 1: Spark(3/1), 2: Mike(3/1), 3: Fast Al(evens)")
+    print("\n \nBetting Odds: 1: Spark(3/1), 2: Mike(3/1), 3: Fast Al(evens)")
     horses = {
     1: 'Spark',
     2: 'Magic Mike',
@@ -40,10 +50,26 @@ def HorseRacing():
     'Fast Al': 2,
     }
     nameList = list(horses.values())
+    while True:
+            try:
+                selection = int(input("\n \nChoose a horses' number: "))
+
+            except ValueError:
+                print("This is an unaccepted response, enter a valid value")
+                continue
+            else:
+                break
     
-    selection = int(input("Choose a horses' number: "))
+    while True:
+            try:
+                bet = int(input("Place your bet: "))
+
+            except ValueError:
+                print("This is an unaccepted response, enter a valid value")
+                continue
+            else:
+                break
     
-    bet = int(input("Place your bet: "))
 
 
     
@@ -58,10 +84,10 @@ def HorseRacing():
 
     if horses[selection] == name:
         winning = bet * oddsCalculator[name]
-        print(f"{name} is the winner, you won ${winning}!")
+        print(f"{name} is the winner, you won ${winning}!\n \n")
         menuRun()
     else:
-        print(f"{name} is the winner, you lose!")
+        print(f"{name} is the winner, you lose!\n \n")
         menuRun()
 
 
@@ -71,7 +97,7 @@ def GuessCountry():
 
     country = random.choice(countries).upper()
 
-    print("Try and guess the eurpean country!")
+    print("\n \nTry and guess the country!")
 
     for i in country:
         print("_ ")
@@ -83,8 +109,16 @@ def GuessCountry():
 
     while chances != 0:
     
-    
-        guess = str(input('Enter a letter to guess: ')).upper()
+        while True:
+            try:
+                guess = str(input('Enter a letter to guess: ')).upper()
+
+            except:
+                print("This is an unaccepted response, enter a valid value")
+                continue
+            else:
+                break
+        
 
         if guess in country:
             k = country.count(guess) 
@@ -111,7 +145,7 @@ def GuessCountry():
            
 
 def Describe():
-        words = {"A": "Amazing",
+    words = {"A": "Amazing",
 "B": "Bold",
 "C": "Couragous",
 "D": "Daring",
@@ -137,13 +171,13 @@ def Describe():
 "X": "",
 "Y": "",
 "Z": "",}
+        
+    nameD = str(input('\n \nEnter your Name: ')).upper()
 
-        nameD = str(input('Enter your Name: ')).upper()
-
-        for i in nameD:
-            nme = words[i]
+    for i in nameD:
+        nme = words[i]
         print(nme)
-        menuRun()
+    menuRun()
 
 
 def Exit():
