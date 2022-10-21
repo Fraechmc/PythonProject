@@ -12,3 +12,5 @@ The user will be described based on their name. A users name will be split up an
 
 option 4: Exit
 This will allow the user to leave
+
+If i was to do this improve this, I would focus on validation. The user can enter different data types and so on causing the application to fail.
